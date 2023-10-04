@@ -1,0 +1,10 @@
+.chart {
+	display: flex;
+	align-items: end;
+}
+
+.value {
+	width: 10px;
+	height: calc(10px * var(--value));
+	background-color: #bf1313;
+}
