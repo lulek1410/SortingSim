@@ -8,3 +8,7 @@
 	height: calc(10px * var(--value));
 	background-color: #bf1313;
 }
+
+.selected {
+	background-color: white;
+}
