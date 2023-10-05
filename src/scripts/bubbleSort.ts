@@ -1,4 +1,4 @@
-import { Value } from "../components/Chart";
+import { Value } from "store/reducers/chartDataSlice";
 
 export function* bubbleSort(array: Array<Value>) {
 	let n = array.length;
@@ -12,7 +12,7 @@ export function* bubbleSort(array: Array<Value>) {
 				swapped = true;
 				didSwap = true;
 			}
-			yield { swap: didSwap, index: i };
+			yield { didSwap: didSwap, index: i };
 		}
 		n = n - 1;
 	}

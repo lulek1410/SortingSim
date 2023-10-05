@@ -1,10 +1,10 @@
+import { useAppDispatch } from "hooks/useAppDispatch";
 import "./Controls.css";
+import { start } from "store/reducers/stateSlice";
 
-interface ControlsProps {
-	onRun: () => void;
-}
+const Controls = () => {
+	const dispatch = useAppDispatch();
 
-const Controls = ({ onRun }: ControlsProps) => {
 	return (
 		<div className="controls">
 			<fieldset>
@@ -38,7 +38,7 @@ const Controls = ({ onRun }: ControlsProps) => {
 					<label htmlFor="delay">Delay (ms):</label>
 					<input type="number" id="delay" name="delay" min="100" max="1000" />
 				</div>
-				<button onClick={onRun}>Run</button>
+				<button onClick={()=>dispatch(start())}>Run</button>
 			</div>
 		</div>
 	);
