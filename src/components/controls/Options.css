@@ -11,6 +11,11 @@ button {
 	background-color: rgb(235, 235, 235);
 	margin-top: 10px;
 }
+
+#delay:disabled {
+	color: rgb(163, 163, 163);
+}
+
 .buttons {
 	display: flex;
 	gap: 10px;
@@ -24,8 +29,20 @@ button {
 		#ffe992 100%
 	);
 	transition: box-shadow 200ms ease-in-out;
+	cursor: pointer;
 }
 
-button:hover {
+button:hover:not(button:disabled) {
 	box-shadow: 0 0 7px rgb(161, 161, 161);
+}
+
+button:disabled {
+	color: rgb(100, 100, 100);
+	background-image: linear-gradient(
+		to top,
+		#a08000 0%,
+		#ebbc00 80%,
+		#ffe26f 100%
+	);
+	cursor: default;
 }

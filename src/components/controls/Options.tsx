@@ -25,10 +25,14 @@ const Options = () => {
 					max="1000"
 					value={delay}
 					onChange={(e) => dispatch(setDelay(parseInt(e.target.value, 10)))}
+					disabled={isPaused || isSorting}
 				/>
 			</div>
 			<div className="buttons">
-				<button onClick={() => dispatch(start())} disabled={!selectedAlgorithm}>
+				<button
+					onClick={() => dispatch(start())}
+					disabled={!selectedAlgorithm || isPaused || isSorting}
+				>
 					Run
 				</button>
 				<button
