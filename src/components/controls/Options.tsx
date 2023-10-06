@@ -1,6 +1,7 @@
 import "./Options.css";
 import { useAppDispatch } from "hooks/useAppDispatch";
 import { useAppSelector } from "hooks/useAppSelector";
+import { reset } from "store/reducers/chartDataSlice";
 import { setDelay } from "store/reducers/setttingsSlice";
 import { start } from "store/reducers/stateSlice";
 
@@ -9,6 +10,7 @@ const Options = () => {
 	const { selectedAlgorithm, delay } = useAppSelector(
 		({ settings }) => settings
 	);
+	const { isSorting, isPaused } = useAppSelector(({ state }) => state);
 
 	return (
 		<div>
@@ -25,9 +27,17 @@ const Options = () => {
 					onChange={(e) => dispatch(setDelay(parseInt(e.target.value, 10)))}
 				/>
 			</div>
-			<button onClick={() => dispatch(start())} disabled={!selectedAlgorithm}>
-				Run
-			</button>
+			<div className="buttons">
+				<button onClick={() => dispatch(start())} disabled={!selectedAlgorithm}>
+					Run
+				</button>
+				<button
+					onClick={() => dispatch(reset())}
+					disabled={isPaused || isSorting}
+				>
+					Shuffle
+				</button>
+			</div>
 		</div>
 	);
 };
