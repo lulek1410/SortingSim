@@ -1,6 +1,6 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
-type Algorithms =
+export type Algorithms =
 	| ""
 	| "Bubble sort"
 	| "Insertion sort"

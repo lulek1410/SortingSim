@@ -1,6 +1,6 @@
 import "./App.css";
 import Chart from "./components/Chart";
-import Controls from "./components/Controls";
+import Controls from "./components/controls/Controls";
 
 function App() {
 	return (

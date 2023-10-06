@@ -1,0 +1,8 @@
+fieldset {
+	border: none;
+}
+
+.algorithm-controls > div {
+	display: flex;
+	gap: 10px;
+}
