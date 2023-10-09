@@ -5,7 +5,7 @@ export type Algorithms =
 	| "Bubble sort"
 	| "Insertion sort"
 	| "Selection sort"
-	| "Quick sort"
+	| "Shaker sort"
 	| "Bucket sort";
 
 interface Settings {

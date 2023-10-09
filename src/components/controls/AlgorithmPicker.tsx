@@ -16,8 +16,8 @@ const fields = [
 		title: "Selection sort",
 	},
 	{
-		id: "quick",
-		title: "Quick sort",
+		id: "shaker",
+		title: "Shaker sort",
 	},
 	{
 		id: "bucket",
