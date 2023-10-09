@@ -12,7 +12,7 @@ export function* bubbleSort(array: Array<Value>) {
 				swapped = true;
 				didSwap = true;
 			}
-			yield { didSwap: didSwap, index: i };
+			yield { didSwap: didSwap, index1: i, index2: i - 1 };
 		}
 		n = n - 1;
 	}

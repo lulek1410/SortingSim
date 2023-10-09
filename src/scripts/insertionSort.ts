@@ -7,7 +7,7 @@ export function* insertionSort(array: Array<Value>) {
 		while (j > 0 && array[j - 1].value > array[j].value) {
 			[array[j - 1], array[j]] = [array[j], array[j - 1]];
 			didSwap = true;
-			yield { didSwap: didSwap, index: j };
+			yield { didSwap: didSwap, index1: j, index2: j - 1 };
 			j--;
 		}
 	}

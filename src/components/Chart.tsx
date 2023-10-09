@@ -21,8 +21,8 @@ const Chart = () => {
 			const animateSort = () => {
 				const output = generator.next().value;
 				if (output) {
-					const { didSwap, index } = output;
-					dispatch(markSelected({ index1: index, index2: index - 1 }));
+					const { didSwap, index1, index2 } = output;
+					dispatch(markSelected({ index1: index1, index2: index2 }));
 					animationTimeout = setTimeout(() => {
 						if (didSwap) {
 							dispatch(swap());

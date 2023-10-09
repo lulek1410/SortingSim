@@ -4,7 +4,7 @@ export type Algorithms =
 	| ""
 	| "Bubble sort"
 	| "Insertion sort"
-	| "Merge sort"
+	| "Selection sort"
 	| "Quick sort"
 	| "Bucket sort";
 

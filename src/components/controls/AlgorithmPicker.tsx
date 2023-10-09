@@ -12,8 +12,8 @@ const fields = [
 		title: "Insertion sort",
 	},
 	{
-		id: "merge",
-		title: "Merge sort",
+		id: "selection",
+		title: "Selection sort",
 	},
 	{
 		id: "quick",
