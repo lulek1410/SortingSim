@@ -1,4 +1,5 @@
 import { bubbleSort } from "scripts/bubbleSort";
+import { gnomeSort } from "scripts/gnomeSort";
 import { insertionSort } from "scripts/insertionSort";
 import { selectionSort } from "scripts/selectionSort";
 import { shakerSort } from "scripts/shakerSort";
@@ -14,8 +15,8 @@ export const useSortingAlgorithm = (name: string, array: Array<Value>) => {
 			return selectionSort(array);
 		case "Shaker sort":
 			return shakerSort(array);
-		case "Bucket sort":
-			return;
+		case "Gnome sort":
+			return gnomeSort(array);
 		default:
 			return;
 	}

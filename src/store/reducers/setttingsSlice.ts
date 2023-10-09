@@ -6,7 +6,7 @@ export type Algorithms =
 	| "Insertion sort"
 	| "Selection sort"
 	| "Shaker sort"
-	| "Bucket sort";
+	| "Gnome sort";
 
 interface Settings {
 	selectedAlgorithm: Algorithms;

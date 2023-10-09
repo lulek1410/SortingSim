@@ -20,8 +20,8 @@ const fields = [
 		title: "Shaker sort",
 	},
 	{
-		id: "bucket",
-		title: "Bucket sort",
+		id: "gnome",
+		title: "Gnome sort",
 	},
 ];
 
