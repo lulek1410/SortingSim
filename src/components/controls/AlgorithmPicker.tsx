@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import "./AlgorithmPicker.css";
 import { Algorithms, setAlgorithm } from "store/reducers/setttingsSlice";
+import { useAppSelector } from "hooks/useAppSelector";
 
 const fields = [
 	{
@@ -27,9 +28,10 @@ const fields = [
 
 const AlgorithmPicker = () => {
 	const dispatch = useDispatch();
+	const { isSorting } = useAppSelector(({ state }) => state);
 
 	return (
-		<fieldset>
+		<fieldset disabled={isSorting}>
 			<legend>Choose algorithm</legend>
 			<div className="algorithm-controls">
 				{fields.map(({ id, title }) => (

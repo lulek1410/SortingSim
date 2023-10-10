@@ -13,6 +13,7 @@ interface Indexes {
 
 interface ChartData {
 	values: Value[];
+	staticValues: Value[];
 	selectedIndexes: Indexes;
 }
 
@@ -24,6 +25,7 @@ const initialValues: Array<Value> = shuffle(
 
 const initialState: ChartData = {
 	values: initialValues,
+	staticValues: [...initialValues],
 	selectedIndexes: { index1: 0, index2: 0 },
 };
 
@@ -53,11 +55,24 @@ export const chartDataSlice = createSlice({
 			values[index1].isSelected = false;
 			values[index2].isSelected = false;
 		},
-		reset: ({ values }) => {
-			values = shuffle(values);
+		reset: (state) => {
+			shuffle(state.values);
+		},
+		restoreOriginalValues: (state) => {
+			state.values = [...state.staticValues];
+		},
+		syncValues: (state) => {
+			state.staticValues = [...state.values];
 		},
 	},
 });
 
-export const { markSelected, swap, removeMark, reset } = chartDataSlice.actions;
+export const {
+	markSelected,
+	swap,
+	removeMark,
+	reset,
+	syncValues,
+	restoreOriginalValues,
+} = chartDataSlice.actions;
 export default chartDataSlice.reducer;
